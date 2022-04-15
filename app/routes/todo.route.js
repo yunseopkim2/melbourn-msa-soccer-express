@@ -1,2 +1,6 @@
-const { write } = require('../controllers/board.controller');
-module.exports = x => x.app.post(`${x.url}/write`, write) ;
+const { todolist, add } = require('../controllers/todo.controller');
+module.exports = x => {
+    console.log(' ### todo.route 로 들어옴 ###')
+     x.app.post(`${x.url}/add-task`, add);
+    x.app.get(`${x.url}/list`, todolist);
+};
