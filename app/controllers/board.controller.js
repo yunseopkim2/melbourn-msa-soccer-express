@@ -1,19 +1,18 @@
 const db = require('../models/index')
-const UserSchema = db.board
-
+const BoardSchema = db.board
 exports.write = (req, res) => {
-      new UserSchema(req.body).save(()=>{
+    console.log(' ### 진행 4: 노드서버에 진입함 '+ JSON.stringify(req.body))
+
+    new BoardSchema(req.body).save(()=>{
         res.status(200).json({'result':'ok'}) 
     })
     
 }
 exports.boardlist = (req, res) => {
-    console.log(`### userController access `)
-    UserSchema.find()
+    
+    BoardSchema.find()
     .exec((err, boards) => {
         if (err) return res.status(400).send(err)
         res.status(200).json({ success: true, boards })
     })
- 
-    
-}
+    }
