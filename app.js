@@ -1,8 +1,13 @@
 require('dotenv').config();
-const cors = require('cors')
 const express = require('express');
 const app = express();
 const { port, MONGO_URI } = process.env;
+const cors = require('cors')
+
+const tokenRouter = require('./app/routes/token');
+app.use('/token', tokenRouter);
+// const { verifyToken } = require('./middlewares');
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
