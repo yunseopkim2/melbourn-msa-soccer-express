@@ -1,4 +1,4 @@
-const { bmi, computeCalc, gradescore } = require('../service/basic.service');
+const { bmi, computeCalc, gradescore } = require('../service/basicService');
 
 exports.getBmi = (req, res) =>{
     const {name, height, weight} = req.body
