@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
@@ -18,6 +19,5 @@
     "mongoose": "^6.2.9",
     "morgan": "~1.9.1"
   },
-  "type" : "module"
-  
+  "type": "module"
 }
